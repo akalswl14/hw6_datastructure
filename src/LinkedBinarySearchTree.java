@@ -312,6 +312,15 @@ public class LinkedBinarySearchTree<K extends Comparable<K>, V>
     		set(p,replacement.getElement());
     		p = replacement;
     	}
+    	else if(isInternal(left(p))) {
+    		
+    	}
+    	else if(isInternal(right(p))) {
+    		
+    	}
+    	else {
+    		this.remove(p);
+    	}
     	Position<Entry<K,V>> leaf = (isExternal(left(p))?left(p):right(p));
     	Position<Entry<K,V>> sib = sibling(leaf);
     	remove(leaf);
