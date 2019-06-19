@@ -152,7 +152,6 @@ class LinkedBinarySearchTreeTest {
         assertEquals(map.lowerEntry(1), map.floorEntry(1));
         assertEquals(new Entry(2,2), map.ceilingEntry(1));
         assertEquals(new Entry(2,2), map.higherEntry(1));
-
         map.remove(6);
         assertEquals(new Entry(4,4), map.floorEntry(6));
         assertEquals(map.ceilingEntry(6), map.higherEntry(6));
