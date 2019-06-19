@@ -291,6 +291,9 @@ public class LinkedBinarySearchTree<K extends Comparable<K>, V>
 
     @Override
     public V remove(K key) {
+    	//단말노드인경우 : 자기 부모가 null을 가르키게 함, 즉 external로 만듬.
+    	//서브트리가 1개밖에 없을 경우: 자기 부모랑 자기 자식이랑 이음.
+    	//서브트리가 2개일경우 : 자신의 오른쪽 서브트리의 최소값을 찾아(first entry사용.) 자신의 부모와 연결하고 얘를 자신의 자식과 연결하고 ~~~.
     	V rtn;
     	Position<Entry<K,V>> p = null;
 		Node<Entry<K,V>> node = null;
@@ -303,6 +306,25 @@ public class LinkedBinarySearchTree<K extends Comparable<K>, V>
     		}	
     	}
     	rtn = node.getElement().value;
+    	if(this.numChildren(p)<=1) {
+    		this.remove(p);
+    		return rtn;
+    	}
+    	else {
+    		Entry<K,V> take = this.ceilingEntry(key);
+    		Position<Entry<K,V>> take_Position = null;
+    		for(Position<Entry<K, V>> search : this.positions()) {
+        		Node<Entry<K,V>> search_node = (Node<Entry<K,V>>) search;
+        		K now = search_node.getElement().key;
+        		if(take.key.compareTo(now)==0) {
+        			take_Position = search;
+        			break;
+        		}
+        	}
+        	
+
+    		
+    	}
     	if(isInternal(left(p))&&isInternal(p)) {
     		Position<Entry<K,V>> tmp = left(p);
     		while(isInternal(tmp)) {
