@@ -21,16 +21,6 @@ public class LinkedBinarySearchTree<K extends Comparable<K>, V> extends LinkedBi
 			snapshot.add(node.getElement().key);
 		}
 		return snapshot;
-//    	Node<Entry<K, V>> test_entry = this.root;
-//    	snapshot.add(test_entry.getElement().key);
-//    	if(left(test_entry)!=null) {
-//    		snapshot = left(test_entry)
-//    	}
-//    		left(p)
-//        if (left(p) != null)
-//            snapshot.add(left(p));
-//        if (right(p) != null)
-//            snapshot.add(right(p));
 	}
 
 	@Override
@@ -277,78 +267,6 @@ public class LinkedBinarySearchTree<K extends Comparable<K>, V> extends LinkedBi
     		return rtn;
     	}
 	}
-//    		
-//    		int cmp = p_node.getElement().key.compareTo(key);
-//    		
-//    		for(Position<Entry<K, V>> p : this.positions()) {
-//        		Node<Entry<K,V>> node = (Node<Entry<K,V>>) p;
-//        		K now = node.getElement().key;
-//        		if(key.compareTo(now)==0) {
-//        			rtn = node.getElement().value;
-//        			this.set(p, newEntry);
-//        			return rtn;
-//        		}
-//        		p_search = p;
-//        	}
-//
-//    		
-//    		
-//    		
-//    		
-//    		while(cmp == 0) {
-//    			if(isExternal(p_search)) {
-//    				this.set(p_search, newEntry);
-//    				System.out.println(this.size);
-//    				return null;
-//    			}
-//    			else if(cmp <0) {
-//    				p_search = this.left(p_search);
-//    				p_node = p_node.getLeft();//p_search를 노드로 캐스팅하는 방법과 직접 노드를 바꿔주는 것중 어느걸 골라야할까.
-//    			}
-//    			else {
-//    				p_search = this.right(p_search);
-//    				p_node = p_node.getRight();
-//    			}
-//    			cmp = p_node.getElement().key.compareTo(key);
-//    		}
-//    		V rtn = p_node.getElement().value;
-//    		p_node.getElement().value = value;
-//			System.out.println(this.size);
-//    		return rtn;
-////    		for(Position p_search : this.positions()) {//validate메소드를 보면, 포지션 레퍼런스를 노드 레퍼런스로 캐스팅하므로. 
-////    			Node<Entry<K,V>> node = (Node<Entry<K,V>>) p_search; // safe cast
-////    			int cmp = node.getElement().key.compareTo(key);
-////    			if(cmp == 0) {
-////    				node.getElement().value = value; 
-////    			}
-////    			else {
-////    				while(isExternal(p_search)) {
-////    					if(cmp<0) {
-////    						
-////    					}
-////    				}
-////    			}
-////    		}
-//    	}
-////    	Position<Entry<K,V>> p = new 
-////    	if(this.get(key)==null) {//key를 가지고 있는 키를 가진 친구가 없다면.
-////    		this.
-////    	}
-////    	return put(key, value);
-////    	else {
-////    		for(Entry<K,V> entry : this.entries()) {
-////    			entry.key = key;
-////    			if(cmp==0) {//this에 있는 entry중 키 값이 key인게 있을 경우.
-////    				entry.value = value;
-////    			}
-////    			else if(cmp >)
-////    		}
-////    	}
-////    	Position<Entry<K,V>> p = new 
-////    	if(this.get(key)==null) {//key를 가지고 있는 키를 가진 친구가 없다면.
-////    		this.
-////    	}
-////    	return put(key, value);
 
 	@Override
 	public V remove(K key) {
@@ -388,30 +306,7 @@ public class LinkedBinarySearchTree<K extends Comparable<K>, V> extends LinkedBi
 			this.remove(take_Position);
 			
 		}
-//    	if(isInternal(left(p))&&isInternal(p)) {
-//    		Position<Entry<K,V>> tmp = left(p);
-//    		while(isInternal(tmp)) {
-//    			tmp = right(tmp);
-//    		}
-//    		Position<Entry<K,V>> replacement = tmp;
-//    		set(p,replacement.getElement());
-//    		p = replacement;
-//    	}
-//    	else if(isInternal(left(p))) {
-//    		
-//    	}
-//    	else if(isInternal(right(p))) {
-//    		
-//    	}
-//    	else {
-//    		this.remove(p);
-//    	}
-//    	Position<Entry<K,V>> leaf = (isExternal(left(p))?left(p):right(p));
-//    	Position<Entry<K,V>> sib = sibling(leaf);
-//    	remove(leaf);
-//    	remove(p);
-//    	rebalancedelete(sib);
-//    	//미완!!!!!!!!
+
 		return rtn;
 	}
 
